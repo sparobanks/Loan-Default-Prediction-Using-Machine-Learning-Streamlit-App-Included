@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 import joblib
 
+
+st.set_page_config(page_title="Loan Default Prediction", layout="centered")
+
 # Load the trained pipeline
 @st.cache_resource
 def load_model():
@@ -10,8 +13,6 @@ def load_model():
     return model
 
 clf = load_model()
-
-st.set_page_config(page_title="Loan Default Prediction", layout="centered")
 
 st.title("🏦 Loan Default Risk Predictor")
 st.write(
