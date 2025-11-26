@@ -24,11 +24,10 @@ It includes:
 ├── 📄 README.md
 ├── 📄 requirements.txt
 ├── 📄 .gitignore
-├── 📓 loan_default_prediction.ipynb        ← Full Notebook
-├── streamlit_app.py                 ← Streamlit Prediction App
-└── loan_model.pkl                   ← Saved LightGBM Model
+├── 📓 Loan Default Prediction model.ipynb        ← Full Notebook
+├── loan_default_app.py                 ← Streamlit Prediction App
+└── loan_default_pipeline.pkl                  ← Saved LightGBM Model
 ```
-
 
 
 # **Problem Statement**
@@ -198,21 +197,21 @@ print("ROC-AUC:", roc_auc)
 ```python
 import joblib
 
-joblib.dump(model, "model/loan_model.pkl")
+joblib.dump(model, "loan_default_pipeline.pkl")
 ```
 
 ---
 
 # **Streamlit Prediction App**
 
-Location: `app/streamlit_app.py`
+Location: `loan_default_app.py`
 
 ```python
 import streamlit as st
 import joblib
 import numpy as np
 
-model = joblib.load("../model/loan_model.pkl")
+model = joblib.load("loan_default_pipeline.pkl")
 
 st.title("Loan Default Prediction App")
 st.write("Enter applicant information:")
@@ -256,7 +255,6 @@ jupyter notebook
 ### **4. Run Streamlit App**
 
 ```bash
-cd app
 streamlit run streamlit_app.py
 ```
 
