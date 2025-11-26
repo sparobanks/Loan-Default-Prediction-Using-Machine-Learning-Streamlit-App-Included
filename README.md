@@ -143,7 +143,7 @@ jupyter notebook
 ### **4. Run Streamlit App**
 
 ```bash
-streamlit run streamlit_app.py
+streamlit run loan_default_app.py
 ```
 
 ---
